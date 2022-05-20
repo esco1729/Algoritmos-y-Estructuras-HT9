@@ -127,6 +127,7 @@ public class Menu {
                         String dest2 = sc.next();
                         
                         boolean nit = false;
+                        
                         for(Modelo c: grafos){
                             if((c.getOrigen().equals(ori)) && (c.getDestino().equals(dest2))){
                             	grafos.remove(c);

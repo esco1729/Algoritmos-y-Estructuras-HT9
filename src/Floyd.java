@@ -63,7 +63,7 @@ public class Floyd {
                 if(adjMatrix[i][j] != 1000000000){
                     if(i != j){
                         if(rutas[i][j].equals("") && (i == str2) && (j == dest)){
-                            ruta += "De " + grafo.get(i) + "hacia " + grafo.get(j) + "debe tomar la ruta desde " + grafo.get(i) + " " + grafo.get(j) + " ";
+                            ruta += "De " + grafo.get(i) + " hacia " + grafo.get(j) + " debe tomar la ruta desde " + grafo.get(i);
                         }else if(!rutas[i][j].equals("") && (j == dest) && (i == str2)){
                             String rut = rutas[i][j];
                             if(!rut.contains(",")){
@@ -78,12 +78,12 @@ public class Floyd {
                                 }
                             }
                             
-                            String center = "";
+                            String centro = "";
                             for(Integer in: todasRutas){
                                 
-                                center += grafo.get(in - 1) + ", ";
+                                centro += grafo.get(in - 1) + ", ";
                             }
-                            ruta += "De " + grafo.get(i) + "hacia " + grafo.get(j) + "debe tomar la ruta desde " + grafo.get(i) + center + grafo.get(j);
+                            ruta += "De " + grafo.get(i) + "hacia " + grafo.get(j) + "debe tomar la ruta desde " + grafo.get(i) + "(centro: " + centro + ")";
                         }
                     }
                 }
@@ -181,15 +181,15 @@ public class Floyd {
             }
         }
         
-        int center = 0;
+        int centro = 0;
         for (int i = 0; i < matriz.length; i++) {
             if(matriz[i][pos] == min){
-                center = i;
+                centro = i;
                 break;
             }
         }
         
-        return center;
+        return centro;
     }
     /**
      * Lectura del archivo con ciudades

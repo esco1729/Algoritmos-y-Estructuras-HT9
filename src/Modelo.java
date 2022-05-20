@@ -1,4 +1,10 @@
 import java.util.ArrayList;
+
+/**
+ * Clase con características del grafo
+ * @author liter
+ *
+ */
 public class Modelo {
 	String origen, destino;
 	int dist;
@@ -7,7 +13,12 @@ public class Modelo {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param origen
+	 * @param destino
+	 * @param dist
+	 */
 	public Modelo(String origen, String destino, int dist) {
 		this.origen = origen;
 		this.destino = destino;
