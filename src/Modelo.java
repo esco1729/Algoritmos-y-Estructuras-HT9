@@ -3,6 +3,10 @@ public class Modelo {
 	String origen, destino;
 	int dist;
 
+	public Modelo() {
+		
+	}
+	
 	
 	public Modelo(String origen, String destino, int dist) {
 		this.origen = origen;

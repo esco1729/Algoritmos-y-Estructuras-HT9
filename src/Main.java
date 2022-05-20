@@ -6,36 +6,46 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
-	public static void main(String[] args) {
-		
-	}
-	
-    public ArrayList<Modelo> readTXTFile() throws FileNotFoundException, IOException{
+public class Main{
+    public static void main(String[] args) throws IOException{
+        Menu menu = new Menu();
+        menu.vista();
+    }
+    
+    
+    public ArrayList<Modelo> read() throws FileNotFoundException, IOException{
         ArrayList<Modelo> grafo = new ArrayList<>();
         File txtFile = new File ("guategrafo.txt");
         FileReader reader = new FileReader(txtFile);
         BufferedReader bfReader = new BufferedReader(reader);
-        String row = "";
+        String fila = "";
         Scanner sc = new Scanner(reader);
         
-        String org;
+        String origen;
         String des;
-        int dis;
+        int dist;
         int cont = 0;
         
         while (sc.hasNextLine()) {
-            row = sc.nextLine();        
-            org = row.substring(0, row.indexOf(" "));
-            row = row.substring(row.indexOf(" ") + 1, row.length());      
-            des = row.substring(0, row.indexOf(" "));
-            row = row.substring(row.indexOf(" ") + 1, row.length());     
-            dis = Integer.parseInt(row.substring(0, row.length()));   
+            fila = sc.nextLine();        
+            origen = fila.substring(0, fila.indexOf(" "));
+            fila = fila.substring(fila.indexOf(" ") + 1, fila.length());      
+            des = fila.substring(0, fila.indexOf(" "));
+            fila = fila.substring(fila.indexOf(" ") + 1, fila.length());     
+            dist = Integer.parseInt(fila.substring(0, fila.length()));   
             cont++;
-            grafo.add(new Modelo(org, des, dis));
+            grafo.add(new Modelo(origen, des, dist));
             reader.close();
             bfReader.close();
         }
         return grafo;
     }
+    
+    
+    
+    
+    
 }
+	
+
+
